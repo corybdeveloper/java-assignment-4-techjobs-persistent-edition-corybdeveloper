@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -18,9 +19,11 @@ public class EmployerController {
     @Autowired
     private EmployerRepository employerRepository;
 
-    @GetMapping
-    public String displayAllEmployers(Model model) {
+    @GetMapping("")
+    public String index (Model model) {
+        model.addAttribute("title", "All Employers");
         model.addAttribute("employers", employerRepository.findAll());
+
         return "employers/index";
     }
 

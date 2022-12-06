@@ -19,8 +19,9 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @GetMapping
-    public String displayAllSkills(Model model) {
+    @GetMapping("")
+    public String index (Model model) {
+        model.addAttribute("title", "All Skills");
         model.addAttribute("skills", skillRepository.findAll());
         return "skills/index";
     }
@@ -41,7 +42,7 @@ public class SkillController {
         return "redirect:";
     }
 
-    @GetMapping("view/{employerId}")
+    @GetMapping("view/{skillId}")
     public String displayViewSkill(Model model, @PathVariable int skillId) {
 
         Optional<Skill> optSkill = skillRepository.findById(skillId);

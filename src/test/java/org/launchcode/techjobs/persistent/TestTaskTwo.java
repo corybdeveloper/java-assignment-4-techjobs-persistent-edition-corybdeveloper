@@ -1,8 +1,12 @@
 package org.launchcode.techjobs.persistent;
 
+import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
+import org.launchcode.techjobs.persistent.models.data.SkillRepository;
+import org.launchcode.techjobs.persistent.models.data.JobRepository;
 import mockit.Expectations;
 import mockit.Mocked;
 import org.junit.jupiter.api.Test;
+import org.launchcode.techjobs.persistent.controllers.SkillController;
 import org.launchcode.techjobs.persistent.controllers.EmployerController;
 import org.launchcode.techjobs.persistent.models.Employer;
 import org.launchcode.techjobs.persistent.models.Skill;
